@@ -8,6 +8,7 @@ class IceBarrage(MycroftSkill):
     @intent_file_handler('barrage.ice.intent')
     def handle_barrage_ice(self, message):
         self.speak_dialog('barrage.ice')
+        self.audio_service.play('file:///home/pi/ice_barrage.wav')
 
 
 def create_skill():
