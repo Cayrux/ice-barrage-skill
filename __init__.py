@@ -5,6 +5,9 @@ from mycroft.skills.audioservice import AudioService
 class IceBarrage(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
+        
+    def initialize(self):
+        self.audio_service = AudioService(self.bus)
 
     @intent_file_handler('barrage.ice.intent')
     def handle_barrage_ice(self, message):
